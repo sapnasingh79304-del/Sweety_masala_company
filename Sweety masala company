@@ -1231,6 +1231,7 @@ Order on WhatsApp
 
 });
 
-}
+}<div class="product-card">
+<div class="product-card" onclick="openProduct('${doc.id}')">
 
 
