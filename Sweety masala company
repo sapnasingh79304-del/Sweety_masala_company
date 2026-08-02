@@ -1739,6 +1739,11 @@ padding:12px;
 margin-bottom:20px;
 
 }
+<button onclick="window.location.href='orders.html'">
+
+View Orders
+
+</button>
 
 
 
