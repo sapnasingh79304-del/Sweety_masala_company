@@ -1393,6 +1393,76 @@ Create Account
 </body>
 
 </html>
+// ================================
+// Customer Register
+// ================================
+
+function registerCustomer(){
+
+const email=document.getElementById("email").value.trim();
+
+const password=document.getElementById("password").value;
+
+const msg=document.getElementById("msg");
+
+auth.createUserWithEmailAndPassword(email,password)
+
+.then(()=>{
+
+msg.style.color="green";
+
+msg.innerHTML="Account Created Successfully";
+
+})
+
+.catch((error)=>{
+
+msg.style.color="red";
+
+msg.innerHTML=error.message;
+
+});
+
+}
+
+// ================================
+// Customer Login
+// ================================
+
+function loginCustomer(){
+
+const email=document.getElementById("email").value.trim();
+
+const password=document.getElementById("password").value;
+
+const msg=document.getElementById("msg");
+
+auth.signInWithEmailAndPassword(email,password)
+
+.then(()=>{
+
+msg.style.color="green";
+
+msg.innerHTML="Login Successful";
+
+setTimeout(()=>{
+
+window.location.href="products.html";
+
+},1000);
+
+})
+
+.catch((error)=>{
+
+msg.style.color="red";
+
+msg.innerHTML=error.message;
+
+});
+
+}
+
 
 
 
