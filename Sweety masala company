@@ -1744,6 +1744,121 @@ margin-bottom:20px;
 View Orders
 
 </button>
+// =============================
+// Sweety Masala Company
+// Orders Management
+// =============================
+
+const table = document.getElementById("ordersTable");
+
+let allOrders = [];
+
+db.collection("orders")
+.orderBy("createdAt", "desc")
+.onSnapshot((snapshot) => {
+
+    allOrders = [];
+
+    snapshot.forEach((doc) => {
+
+        allOrders.push({
+            id: doc.id,
+            ...doc.data()
+        });
+
+    });
+
+    renderOrders(allOrders);
+
+});
+
+function renderOrders(orders) {
+
+    table.innerHTML = "";
+
+    orders.forEach((order) => {
+
+        table.innerHTML += `
+
+<tr>
+
+<td>${order.customerName || ""}</td>
+
+<td>${order.mobile || ""}</td>
+
+<td>${order.address || ""}</td>
+
+<td>${order.paymentMethod || "COD"}</td>
+
+<td>
+
+<select onchange="updateStatus('${order.id}', this.value)">
+
+<option value="Pending" ${order.status==="Pending"?"selected":""}>Pending</option>
+
+<option value="Confirmed" ${order.status==="Confirmed"?"selected":""}>Confirmed</option>
+
+<option value="Delivered" ${order.status==="Delivered"?"selected":""}>Delivered</option>
+
+</select>
+
+</td>
+
+<td>
+
+<button onclick="deleteOrder('${order.id}')">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+    });
+
+}
+
+function updateStatus(id, status) {
+
+    db.collection("orders").doc(id).update({
+
+        status: status
+
+    });
+
+}
+
+function deleteOrder(id) {
+
+    if(confirm("Delete this order?")){
+
+        db.collection("orders").doc(id).delete();
+
+    }
+
+}
+
+function searchOrders(){
+
+    const keyword = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    const filtered = allOrders.filter(order =>
+
+        (order.customerName || "")
+        .toLowerCase()
+        .includes(keyword)
+
+    );
+
+    renderOrders(filtered);
+
+}
+
 
 
 
