@@ -1027,4 +1027,52 @@ if (!file) {
     });
 
 }
+const fileName = Date.now() + "_" + file.name;
+
+const storageRef = storage.ref("products/" + fileName);
+
+storageRef.put(file)
+
+.then(() => {
+
+    storageRef.getDownloadURL()
+
+    .then((url) => {
+
+        db.collection("products").add({
+
+            name: name,
+            price: Number(price),
+            discount: Number(discount),
+            size: size,
+            description: description,
+            image: url,
+            createdAt: new Date()
+
+        })
+
+        .then(() => {
+
+            msg.style.color = "green";
+            msg.innerHTML = "Product Added Successfully";
+
+            document.getElementById("name").value = "";
+            document.getElementById("price").value = "";
+            document.getElementById("discount").value = "";
+            document.getElementById("description").value = "";
+            document.getElementById("image").value = "";
+
+        });
+
+    });
+
+})
+
+.catch((error) => {
+
+    msg.style.color = "red";
+    msg.innerHTML = error.message;
+
+});
+
 
