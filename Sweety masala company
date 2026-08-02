@@ -1012,8 +1012,16 @@ function addProduct() {
     })
 
     .catch((error) => {
+const file = document.getElementById("image").files[0];
+
+if (!file) {
+    msg.style.color = "red";
+    msg.innerHTML = "Please select a product image.";
+    return;
+}
 
         msg.style.color = "red";
+
         msg.innerHTML = error.message;
 
     });
