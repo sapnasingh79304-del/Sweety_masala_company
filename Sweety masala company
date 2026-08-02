@@ -1857,6 +1857,34 @@ function searchOrders(){
 
     renderOrders(filtered);
 
+}select{
+
+padding:8px;
+
+border-radius:5px;
+
+}
+
+table button{
+
+background:#d32f2f;
+
+color:white;
+
+border:none;
+
+padding:8px 12px;
+
+border-radius:5px;
+
+cursor:pointer;
+
+}
+
+table button:hover{
+
+background:#b71c1c;
+
 }
 
 
