@@ -1566,6 +1566,12 @@ msg.innerHTML=error.message;
 });
 
 }
+<a href="checkout.html">
+
+Buy Now (COD)
+
+</a>
+
 
 
 
