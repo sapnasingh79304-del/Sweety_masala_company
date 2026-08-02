@@ -1161,6 +1161,76 @@ text-decoration:none;
 border-radius:6px;
 
 }
+const productList = document.getElementById("product-list");
 
+if(productList){
+
+db.collection("products")
+
+.orderBy("createdAt","desc")
+
+.onSnapshot((snapshot)=>{
+
+productList.innerHTML="";
+
+snapshot.forEach((doc)=>{
+
+const p=doc.data();
+
+const finalPrice=Math.round(
+p.price-(p.price*p.discount/100)
+);
+
+productList.innerHTML+=`
+
+<div class="product-card">
+
+<img src="${p.image}">
+
+<h3>${p.name}</h3>
+
+<p>${p.description}</p>
+
+<p>${p.size}</p>
+
+<p>
+
+<span class="old-price">
+
+₹${p.price}
+
+</span>
+
+</p>
+
+<p class="new-price">
+
+₹${finalPrice}
+
+</p>
+
+<a
+
+class="order-btn"
+
+target="_blank"
+
+href="https://wa.me/917488130373?text=I want to order ${p.name} (${p.size})"
+
+>
+
+Order on WhatsApp
+
+</a>
+
+</div>
+
+`;
+
+});
+
+});
+
+}
 
 
