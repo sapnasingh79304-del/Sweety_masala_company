@@ -617,4 +617,143 @@ allow read, write: if true;
 }
 
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Panel | Sweety Masala Company</title>
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<h1>Admin Login</h1>
+
+<input
+type="email"
+id="email"
+placeholder="Admin Email">
+
+<input
+type="password"
+id="password"
+placeholder="Password">
+
+<button onclick="login()">
+Login
+</button>
+
+<p id="msg"></p>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script src="../firebase.js"></script>
+
+<script src="admin.js"></script>
+
+</body>
+</html>body{
+
+margin:0;
+
+padding:0;
+
+font-family:Arial;
+
+background:#f4f4f4;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+}
+
+.login-box{
+
+width:350px;
+
+background:white;
+
+padding:30px;
+
+border-radius:10px;
+
+box-shadow:0 0 20px rgba(0,0,0,.2);
+
+}
+
+h1{
+
+text-align:center;
+
+color:#d32f2f;
+
+}
+
+input{
+
+width:100%;
+
+padding:12px;
+
+margin-top:15px;
+
+border:1px solid #ccc;
+
+border-radius:6px;
+
+}
+
+button{
+
+width:100%;
+
+padding:12px;
+
+margin-top:20px;
+
+background:#d32f2f;
+
+color:white;
+
+border:none;
+
+border-radius:6px;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#b71c1c;
+
+}
+
+#msg{
+
+margin-top:15px;
+
+text-align:center;
+
+color:red;
+
+}
 
