@@ -1515,7 +1515,58 @@ Place COD Order
 <script src="js/app.js"></script>
 
 </body>
-</html>
+</html>function placeOrder(){
+
+const customerName=document.getElementById("customerName").value.trim();
+const mobile=document.getElementById("mobile").value.trim();
+const address=document.getElementById("address").value.trim();
+const msg=document.getElementById("msg");
+
+const productId=localStorage.getItem("productId");
+
+if(!customerName || !mobile || !address){
+
+msg.style.color="red";
+msg.innerHTML="Please fill all details.";
+
+return;
+
+}
+
+db.collection("orders").add({
+
+customerName,
+mobile,
+address,
+productId,
+paymentMethod:"COD",
+status:"Pending",
+createdAt:new Date()
+
+})
+
+.then(()=>{
+
+msg.style.color="green";
+msg.innerHTML="Order Placed Successfully!";
+
+setTimeout(()=>{
+
+window.location.href="products.html";
+
+},1500);
+
+})
+
+.catch((error)=>{
+
+msg.style.color="red";
+msg.innerHTML=error.message;
+
+});
+
+}
+
 
 
 
