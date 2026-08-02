@@ -256,7 +256,15 @@ setInterval(changeBanner, 3000);<section class="hero">
     <a href="cart.html">Cart</a>
     <a href="contact.html">Contact</a>
   </nav>
-</header>
+</header><section class="products">
+
+<h2>Our Products</h2>
+
+<div id="product-list" class="product-grid">
+
+</div>
+
+</section>
 
 <section class="products">
   <h1>Our Products</h1>
