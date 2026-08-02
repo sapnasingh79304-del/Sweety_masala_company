@@ -1686,6 +1686,61 @@ onkeyup="searchOrders()">
 </body>
 
 </html>
+.container{
+
+width:95%;
+
+margin:30px auto;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+background:#fff;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+table th{
+
+background:#d32f2f;
+
+color:white;
+
+padding:12px;
+
+}
+
+table td{
+
+padding:12px;
+
+border-bottom:1px solid #ddd;
+
+}
+
+table tr:hover{
+
+background:#f8f8f8;
+
+}
+
+#search{
+
+width:300px;
+
+padding:12px;
+
+margin-bottom:20px;
+
+}
+
+
 
 
 
