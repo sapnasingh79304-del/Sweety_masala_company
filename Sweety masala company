@@ -1461,7 +1461,62 @@ msg.innerHTML=error.message;
 
 });
 
-}<a href="login.html">Login</a>
+}<a href="login.html">Login</a><!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<h1>Checkout (Cash on Delivery)</h1>
+
+<input
+type="text"
+id="customerName"
+placeholder="Full Name">
+
+<input
+type="tel"
+id="mobile"
+placeholder="Mobile Number">
+
+<textarea
+id="address"
+placeholder="Delivery Address"></textarea>
+
+<button onclick="placeOrder()">
+
+Place COD Order
+
+</button>
+
+<p id="msg"></p>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script src="firebase.js"></script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
+
 
 
 
