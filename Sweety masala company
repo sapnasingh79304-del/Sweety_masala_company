@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweety Masala Company</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+    <h2>Sweety Masala Company</h2>
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="products.html">Products</a>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="cart.html">Cart 🛒</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Pure Indian Spices</h1>
+
+<p>Fresh | Pure | Premium Quality</p>
+
+<a href="products.html">
+<button>Shop Now</button>
+</a>
+
+</section>
+
+<section class="categories">
+
+<h2>Our Categories</h2>
+
+<div class="box">Powder Masala</div>
+
+<div class="box">Whole Spices</div>
+
+<div class="box">Sattu</div>
+
+<div class="box">Besan</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Sweety Masala Company
+
+</p>
+
+<p>
+
+Jyoti Path, Main Road,
+Ramkrishna Nagar,
+Patna - 800027
+
+</p>
+
+<p>
+
+📞 7488130373
+
+</p>
+
+<p>
+
+📞 7870349173
+
+</p>
+
+</footer>
+
+</body>
+
+</html>*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#f8f8f8;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+background:#ffffff;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo h2{
+color:#e65100;
+font-size:28px;
+}
+
+nav a{
+text-decoration:none;
+margin-left:20px;
+color:#333;
+font-weight:bold;
+transition:.3s;
+}
+
+nav a:hover{
+color:#2e7d32;
+}
+
+.hero{
+height:500px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#ff9800,#4caf50);
+color:white;
+}
+
+.hero h1{
+font-size:55px;
+}
+
+.hero p{
+font-size:22px;
+margin:15px 0;
+}
+
+.hero button{
+padding:14px 35px;
+border:none;
+background:white;
+color:#ff6f00;
+font-size:18px;
+font-weight:bold;
+border-radius:30px;
+cursor:pointer;
+}
+
+.hero button:hover{
+background:#2e7d32;
+color:white;
+}
+
+.categories{
+padding:60px 8%;
+}
+
+.categories h2{
+text-align:center;
+margin-bottom:30px;
+font-size:35px;
+}
+
+.box{
+background:white;
+padding:30px;
+margin:15px;
+border-radius:15px;
+text-align:center;
+font-size:22px;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+footer{
+background:#222;
+color:white;
+padding:30px;
+text-align:center;
+margin-top:50px;
+}
+
+footer p{
+margin:8px;
+}// Mobile Menu (Future Ready)
+console.log("Sweety Masala Company Website Loaded");
+
+// Hero Banner Auto Change
+const banners = [
+    "100% Pure Indian Spices",
+    "Freshly Packed Masala",
+    "Best Quality at Best Price",
+    "Order Online from Sweety Masala Company"
+];
+
+let index = 0;
+
+function changeBanner() {
+    const title = document.getElementById("hero-title");
+
+    if (title) {
+        title.innerText = banners[index];
+    }
+
+    index++;
+
+    if (index >= banners.length) {
+        index = 0;
+    }
+}
+
+setInterval(changeBanner, 3000);<section class="hero">
+
+<h1 id="hero-title">100% Pure Indian Spices</h1>
+
+<p>Fresh | Pure | Premium Quality</p>
+
+<a href="products.html">
+<button>Shop Now</button>
+</a>
+
+</section><script src="js/app.js"></script>
+
