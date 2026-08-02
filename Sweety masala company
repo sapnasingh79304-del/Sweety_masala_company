@@ -1608,6 +1608,85 @@ border-radius:8px;
 font-weight:bold;
 
 }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Orders | Sweety Masala Company</title>
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Customer Orders</h1>
+
+<input
+type="text"
+id="search"
+placeholder="Search by Customer Name..."
+onkeyup="searchOrders()">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Customer</th>
+
+<th>Mobile</th>
+
+<th>Address</th>
+
+<th>Payment</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="ordersTable">
+
+</tbody>
+
+</table>
+
+<br>
+
+<button onclick="window.location.href='dashboard.html'">
+
+⬅ Back to Dashboard
+
+</button>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script src="../firebase.js"></script>
+
+<script src="orders.js"></script>
+
+</body>
+
+</html>
+
 
 
 
