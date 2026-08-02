@@ -1571,6 +1571,44 @@ msg.innerHTML=error.message;
 Buy Now (COD)
 
 </a>
+textarea{
+
+width:100%;
+
+padding:12px;
+
+margin-top:15px;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+
+resize:vertical;
+
+}
+
+.login-box a{
+
+display:block;
+
+margin-top:15px;
+
+padding:12px;
+
+text-align:center;
+
+background:#ff9800;
+
+color:#fff;
+
+text-decoration:none;
+
+border-radius:8px;
+
+font-weight:bold;
+
+}
+
 
 
 
