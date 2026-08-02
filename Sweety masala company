@@ -1240,6 +1240,67 @@ localStorage.setItem("productId", id);
 window.location.href = "product.html";
 
 }
+<section class="product-details">
+
+<div id="product"></div>
+
+</section>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+
+<script src="firebase.js"></script>
+
+<script src="js/app.js"></script>const productDiv = document.getElementById("product");
+
+if(productDiv){
+
+const id = localStorage.getItem("productId");
+
+db.collection("products").doc(id).get()
+
+.then((doc)=>{
+
+const p = doc.data();
+
+const finalPrice = Math.round(
+p.price-(p.price*p.discount/100)
+);
+
+productDiv.innerHTML = `
+
+<img src="${p.image}" width="300">
+
+<h1>${p.name}</h1>
+
+<p>${p.description}</p>
+
+<h2>₹${finalPrice}</h2>
+
+<p><del>₹${p.price}</del></p>
+
+<p>Size : ${p.size}</p>
+
+<a
+href="https://wa.me/917488130373?text=I want to order ${p.name}"
+target="_blank">
+
+Order on WhatsApp
+
+</a>
+
+`;
+
+});
+
+}
+
+
 
 
 
