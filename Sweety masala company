@@ -235,4 +235,116 @@ setInterval(changeBanner, 3000);<section class="hero">
 </a>
 
 </section><script src="js/app.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Sweety Masala Company</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <h2>Sweety Masala Company</h2>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="products">
+  <h1>Our Products</h1>
+
+  <div class="product-card">
+    <h3>Haldi Powder</h3>
+    <p>Available: 1kg, 5kg, 10kg, 15kg, 20kg, 25kg, 30kg</p>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <h3>Dhaniya Powder</h3>
+    <p>Available: 1kg, 5kg, 10kg, 15kg, 20kg, 25kg, 30kg</p>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <h3>Lal Mirch Powder</h3>
+    <p>Available: 1kg, 5kg, 10kg, 15kg, 20kg, 25kg, 30kg</p>
+    <button>Add to Cart</button>
+  </div>
+
+</section>
+
+<script src="js/app.js"></script>
+</body>
+</html>.products{
+    padding:50px 8%;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    margin:20px 0;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.product-card h3{
+    color:#e65100;
+}
+
+.product-card button{
+    margin-top:15px;
+    background:#2e7d32;
+    color:#fff;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}<header>
+
+<div class="logo">
+    <h2>🌿 Sweety Masala Company</h2>
+</div>
+
+<div class="search-box">
+    <input type="text" placeholder="Search Masala...">
+</div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="header-icons">
+    <a href="login.html">👤 Login</a>
+    <a href="cart.html">🛒 Cart</a>
+</div>
+
+</header>.search-box input{
+    width:280px;
+    padding:10px;
+    border:2px solid #ff9800;
+    border-radius:25px;
+    outline:none;
+}
+
+.header-icons a{
+    text-decoration:none;
+    color:#333;
+    margin-left:15px;
+    font-weight:bold;
+}
+
+.header-icons a:hover{
+    color:#2e7d32;
+}
 
