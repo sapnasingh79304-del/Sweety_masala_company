@@ -962,5 +962,61 @@ height:120px;
 resize:none;
 
 }
+// ================================
+// Add Product
+// ================================
 
+function addProduct() {
+
+    const name = document.getElementById("name").value.trim();
+    const price = document.getElementById("price").value;
+    const discount = document.getElementById("discount").value;
+    const size = document.getElementById("size").value;
+    const description = document.getElementById("description").value.trim();
+
+    const msg = document.getElementById("msg");
+
+    if (
+        name === "" ||
+        price === "" ||
+        discount === "" ||
+        description === ""
+    ) {
+        msg.style.color = "red";
+        msg.innerHTML = "Please fill all fields.";
+        return;
+    }
+
+    db.collection("products").add({
+
+        name: name,
+        price: Number(price),
+        discount: Number(discount),
+        size: size,
+        description: description,
+        image: "",
+        createdAt: new Date()
+
+    })
+
+    .then(() => {
+
+        msg.style.color = "green";
+        msg.innerHTML = "Product Added Successfully";
+
+        document.getElementById("name").value = "";
+        document.getElementById("price").value = "";
+        document.getElementById("discount").value = "";
+        document.getElementById("description").value = "";
+
+    })
+
+    .catch((error) => {
+
+        msg.style.color = "red";
+        msg.innerHTML = error.message;
+
+    });
+
+}
 
