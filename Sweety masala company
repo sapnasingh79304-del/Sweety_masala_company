@@ -591,4 +591,15 @@ https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js
 
 <script src="js/app.js"></script>
 Create DatabaseStart in Test Modeasia-south1 (Mumbai)Get StartedStart in Test Modeasia-south1
+productsorderscustomersadminsrules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /{document=**} {
+      allow read, write: if true;
+    }
+
+  }
+}
 
