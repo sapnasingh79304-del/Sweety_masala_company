@@ -756,4 +756,88 @@ text-align:center;
 color:red;
 
 }
+// ===============================
+// Sweety Masala Company
+// Admin Login
+// ===============================
+
+function login() {
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const msg = document.getElementById("msg");
+
+    if (email === "" || password === "") {
+        msg.style.color = "red";
+        msg.innerHTML = "Please enter email and password.";
+        return;
+    }
+
+    auth.signInWithEmailAndPassword(email, password)
+
+    .then((userCredential) => {
+
+        msg.style.color = "green";
+        msg.innerHTML = "Login Successful...";
+
+        setTimeout(() => {
+            window.location.href = "dashboard.html";
+        }, 1000);
+
+    })
+
+    .catch((error) => {
+
+        msg.style.color = "red";
+        msg.innerHTML = error.message;
+
+    });
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+<body>
+
+<div class="login-box">
+
+<h1>Admin Dashboard</h1>
+
+<p>Welcome to Sweety Masala Company</p>
+
+<hr>
+
+<button onclick="window.location.href='add-product.html'">
+Add Product
+</button>
+
+<button onclick="window.location.href='orders.html'">
+View Orders
+</button>
+
+<button onclick="logout()">
+Logout
+</button>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script src="../firebase.js"></script>
+
+<script src="admin.js"></script>
+
+</body>
+</html>
 
