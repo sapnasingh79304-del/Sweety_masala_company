@@ -1992,7 +1992,11 @@ font-size:18px;
 
 margin-top:20px;
 
-}
+}<button onclick="addToCart('${doc.id}')">
+
+Add To Cart
+
+</button>
 
 
 
