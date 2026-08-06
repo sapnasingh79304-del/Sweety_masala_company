@@ -2802,6 +2802,54 @@ window.viewOrder = async (id) => {
 
     modal.style.display = "block";
 
+}document.getElementById("closeModal").onclick = () => {
+
+    modal.style.display = "none";
+
+}
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.5);
+
+}
+
+.modal-content{
+
+    width:90%;
+
+    max-width:600px;
+
+    margin:60px auto;
+
+    background:#fff;
+
+    padding:20px;
+
+    border-radius:8px;
+
+}
+
+#closeModal{
+
+    float:right;
+
+    cursor:pointer;
+
+    font-size:25px;
+
 }
 
 
