@@ -2162,6 +2162,44 @@ Proceed To Checkout
 </a>
 
 </div>
+.cart-summary{
+
+margin-top:30px;
+
+text-align:right;
+
+}
+
+.qty-btn{
+
+padding:8px 12px;
+
+border:none;
+
+cursor:pointer;
+
+border-radius:5px;
+
+margin:0 5px;
+
+}
+
+.remove-btn{
+
+background:red;
+
+color:white;
+
+padding:8px 12px;
+
+border:none;
+
+border-radius:5px;
+
+cursor:pointer;
+
+}
+
 
 
 
