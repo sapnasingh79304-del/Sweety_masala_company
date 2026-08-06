@@ -2910,8 +2910,18 @@ await updateDoc(doc(db,"orders",id),{
 status:status
 
 });
+select{
+
+padding:8px;
+
+border-radius:5px;
+
+border:1px solid #ccc;
+
+cursor:pointer;
 
 }
+
 
 
 
