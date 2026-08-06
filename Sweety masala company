@@ -2466,6 +2466,62 @@ total.innerHTML="Total : ₹"+grandTotal;
 }
 
 loadCheckout();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Successful - Sweety Masala</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="success-box">
+    <h1>🎉 Thank You!</h1>
+    <h2>Your Order Has Been Placed Successfully.</h2>
+
+    <p>Thank you for shopping with <b>Sweety Masala Company</b>.</p>
+
+    <p>Our team will contact you shortly.</p>
+
+    <a href="index.html" class="btn">
+        Continue Shopping
+    </a>
+</div>
+
+</body>
+</html>
+.success-box{
+    width:90%;
+    max-width:500px;
+    margin:100px auto;
+    text-align:center;
+    background:#fff;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.success-box h1{
+    color:green;
+    margin-bottom:20px;
+}
+
+.success-box p{
+    margin:15px 0;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#e63946;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}localStorage.removeItem("cart");
+
+window.location.href="order-success.html";
 
 
 
