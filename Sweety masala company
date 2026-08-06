@@ -2683,7 +2683,15 @@ th{
 button{
     padding:8px 15px;
     cursor:pointer;
-}
+}import { db } from "./firebase.js";
+
+import {
+  collection,
+  onSnapshot,
+  doc,
+  updateDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
 
 
 
