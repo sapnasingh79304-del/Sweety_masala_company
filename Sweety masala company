@@ -2691,8 +2691,36 @@ import {
   doc,
   updateDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const ordersBody = document.getElementById("ordersBody");
 
+function loadOrders() {
 
+    onSnapshot(collection(db, "orders"), (snapshot) => {
+
+        ordersBody.innerHTML = "";
+
+        snapshot.forEach((order) => {
+
+            const data = order.data();
+
+            ordersBody.innerHTML += `
+                <tr>
+                    <td>${data.customerName}</td>
+                    <td>${data.phone}</td>
+                    <td>₹${data.total}</td>
+                    <td>${data.status}</td>
+                    <td>
+                        <button onclick="updateStatus('${order.id}')">
+                            Confirm
+                        </button>
+                    </td>
+                </tr>
+            `;
+        });
+
+    });
+
+}
 
 
 
