@@ -2570,7 +2570,121 @@ const customer = {
     address: addressInput.value
 };
 
-placeOrder(customer, cartItems, grandTotal);
+placeOrder(customer, cartItems, grandTotal);<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Orders</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2>Customer Orders</h2>
+
+<table id="ordersTable">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Phone</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody id="ordersBody">
+
+    </tbody>
+</table>
+
+<script type="module" src="js/admin-orders.js"></script>
+
+</body>
+</html>
+import { db } from "./firebase.js";
+
+import {
+    collection,
+    getDocs,
+    doc,
+    updateDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const ordersBody = document.getElementById("ordersBody");
+
+async function loadOrders() {
+
+    ordersBody.innerHTML = "";
+
+    const snapshot = await getDocs(collection(db, "orders"));
+
+    snapshot.forEach((order) => {
+
+        const data = order.data();
+
+        ordersBody.innerHTML += `
+
+        <tr>
+
+            <td>${data.customerName}</td>
+
+            <td>${data.phone}</td>
+
+            <td>₹${data.total}</td>
+
+            <td>${data.status}</td>
+
+            <td>
+
+                <button onclick="updateStatus('${order.id}')">
+                    Confirm
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    });
+
+}
+
+window.updateStatus = async(id)=>{
+
+    await updateDoc(doc(db,"orders",id),{
+
+        status:"Confirmed"
+
+    });
+
+    loadOrders();
+
+}
+
+loadOrders();
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:center;
+}
+
+th{
+    background:#e63946;
+    color:white;
+}
+
+button{
+    padding:8px 15px;
+    cursor:pointer;
+}
+
 
 
 
