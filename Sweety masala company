@@ -2522,6 +2522,56 @@ loadCheckout();
 }localStorage.removeItem("cart");
 
 window.location.href="order-success.html";
+import { db } from "./firebase.js";
+
+import {
+    collection,
+    addDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+async function placeOrder(customer, cart, total) {
+
+    try {
+
+        await addDoc(collection(db, "orders"), {
+
+            customerName: customer.name,
+
+            phone: customer.phone,
+
+            address: customer.address,
+
+            cart: cart,
+
+            total: total,
+
+            status: "Pending",
+
+            createdAt: serverTimestamp()
+
+        });
+
+        localStorage.removeItem("cart");
+
+        window.location.href = "order-success.html";
+
+    } catch (error) {
+
+        alert("Order Save Failed");
+
+        console.log(error);
+
+    }
+
+}
+const customer = {
+    name: nameInput.value,
+    phone: phoneInput.value,
+    address: addressInput.value
+};
+
+placeOrder(customer, cartItems, grandTotal);
+
 
 
 
