@@ -1997,6 +1997,140 @@ margin-top:20px;
 Add To Cart
 
 </button>
+// =====================================
+// Sweety Masala Company
+// Shopping Cart Engine
+// =====================================
+
+const CART_KEY = "sweety_cart";
+
+// Get Cart
+function getCart() {
+    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+}
+
+// Save Cart
+function saveCart(cart) {
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    updateCartCount();
+}
+
+// Add Product
+function addToCart(product) {
+
+    let cart = getCart();
+
+    const index = cart.findIndex(item => item.id === product.id);
+
+    if (index !== -1) {
+
+        cart[index].quantity += 1;
+
+    } else {
+
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            discount: product.discount,
+            image: product.image,
+            size: product.size,
+            quantity: 1
+        });
+
+    }
+
+    saveCart(cart);
+
+    alert(product.name + " added to cart.");
+
+}
+
+// Remove Product
+function removeFromCart(id) {
+
+    let cart = getCart();
+
+    cart = cart.filter(item => item.id !== id);
+
+    saveCart(cart);
+
+    location.reload();
+
+}
+
+// Quantity +
+
+function increaseQuantity(id){
+
+let cart=getCart();
+
+cart.forEach(item=>{
+
+if(item.id===id){
+
+item.quantity++;
+
+}
+
+});
+
+saveCart(cart);
+
+location.reload();
+
+}
+
+// Quantity -
+
+function decreaseQuantity(id){
+
+let cart=getCart();
+
+cart.forEach(item=>{
+
+if(item.id===id){
+
+if(item.quantity>1){
+
+item.quantity--;
+
+}
+
+}
+
+});
+
+saveCart(cart);
+
+location.reload();
+
+}
+
+// Cart Badge
+
+function updateCartCount(){
+
+const badge=document.getElementById("cart-count");
+
+if(!badge) return;
+
+const cart=getCart();
+
+let total=0;
+
+cart.forEach(item=>{
+
+total+=item.quantity;
+
+});
+
+badge.innerHTML=total;
+
+}
+
+updateCartCount();
+
 
 
 
