@@ -2285,6 +2285,33 @@ totalDiv.innerHTML=
 loadCart();
 <script src="js/cart.js"></script>
 <script src="js/app.js"></script>
+{
+  "customer": {
+    "name": "Sapna",
+    "mobile": "9876543210",
+    "address": "Patna"
+  },
+  "items": [
+    {
+      "id": "abc123",
+      "name": "Haldi Powder",
+      "size": "5kg",
+      "price": 1200,
+      "quantity": 2
+    },
+    {
+      "id": "xyz456",
+      "name": "Besan",
+      "size": "1kg",
+      "price": 180,
+      "quantity": 1
+    }
+  ],
+  "total": 2580,
+  "paymentMethod": "COD",
+  "status": "Pending"
+}
+
 
 
 
