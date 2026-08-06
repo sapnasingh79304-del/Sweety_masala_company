@@ -2963,6 +2963,102 @@ snapshot.forEach((order)=>{
 
 renderOrders(allOrders);
 updateDashboard(allOrders);
+function renderOrders(list){
+
+ordersBody.innerHTML="";
+
+list.forEach(data=>{
+
+ordersBody.innerHTML+=`
+<tr>
+
+<td>${data.customerName}</td>
+
+<td>${data.phone}</td>
+
+<td>₹${data.total}</td>
+
+<td>${data.status}</td>
+
+<td>
+
+<button onclick="viewOrder('${data.id}')">
+View
+</button>
+
+</td>
+
+</tr>
+`;
+
+});
+
+}function renderOrders(list){
+
+ordersBody.innerHTML="";
+
+list.forEach(data=>{
+
+ordersBody.innerHTML+=`
+<tr>
+
+<td>${data.customerName}</td>
+
+<td>${data.phone}</td>
+
+<td>₹${data.total}</td>
+
+<td>${data.status}</td>
+
+<td>
+
+<button onclick="viewOrder('${data.id}')">
+View
+</button>
+
+</td>
+
+</tr>
+`;
+
+});
+
+}searchInput.addEventListener("keyup",()=>{
+
+const keyword=searchInput.value.toLowerCase();
+
+const filtered=allOrders.filter(order=>
+
+order.customerName.toLowerCase().includes(keyword)
+
+||
+
+order.phone.includes(keyword)
+
+);
+
+renderOrders(filtered);
+
+});function updateDashboard(list){
+
+document.getElementById("totalOrders").innerText=list.length;
+
+const revenue=list.reduce((sum,item)=>sum+item.total,0);
+
+document.getElementById("totalRevenue").innerText="₹"+revenue;
+
+document.getElementById("pendingOrders").innerText=
+
+list.filter(item=>item.status==="Pending").length;
+
+document.getElementById("deliveredOrders").innerText=
+
+list.filter(item=>item.status==="Delivered").length;
+
+}
+
+
+
 
 
 
