@@ -2146,7 +2146,7 @@ Add To Cart
 
 </button>
 <script src="js/cart.js"></script>
-
+<script src="js/app.js"></script>
 
 
 
