@@ -2751,7 +2751,59 @@ window.updateStatus = async (id) => {
         Confirm
     </button>
 
-</td>
+</td>import {
+    collection,
+    onSnapshot,
+    doc,
+    getDoc,
+    updateDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const modal = document.getElementById("orderModal");
+
+const orderDetails = document.getElementById("orderDetails");
+
+window.viewOrder = async (id) => {
+
+    const orderRef = doc(db, "orders", id);
+
+    const orderSnap = await getDoc(orderRef);
+
+    if (!orderSnap.exists()) return;
+
+    const data = orderSnap.data();
+
+    let html = "";
+
+    html += `<h3>${data.customerName}</h3>`;
+
+    html += `<p>${data.phone}</p>`;
+
+    html += `<p>${data.address}</p>`;
+
+    html += "<hr>";
+
+    data.cart.forEach(item => {
+
+        html += `
+            <p>
+                ${item.name}
+                × ${item.quantity}
+                = ₹${item.price * item.quantity}
+            </p>
+        `;
+
+    });
+
+    html += `<hr>`;
+
+    html += `<h3>Total : ₹${data.total}</h3>`;
+
+    orderDetails.innerHTML = html;
+
+    modal.style.display = "block";
+
+}
+
 
 
 
