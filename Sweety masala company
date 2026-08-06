@@ -2721,6 +2721,14 @@ function loadOrders() {
     });
 
 }
+window.updateStatus = async (id) => {
+
+    await updateDoc(doc(db, "orders", id), {
+        status: "Confirmed"
+    });
+
+}loadOrders();
+
 
 
 
