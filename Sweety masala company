@@ -2851,6 +2851,68 @@ window.viewOrder = async (id) => {
     font-size:25px;
 
 }
+ordersBody.innerHTML += `
+<tr>
+
+<td>${data.customerName}</td>
+
+<td>${data.phone}</td>
+
+<td>₹${data.total}</td>
+
+<td>
+
+<select onchange="changeStatus('${order.id}',this.value)">
+
+<option value="Pending"
+${data.status==="Pending"?"selected":""}>
+Pending
+</option>
+
+<option value="Confirmed"
+${data.status==="Confirmed"?"selected":""}>
+Confirmed
+</option>
+
+<option value="Shipped"
+${data.status==="Shipped"?"selected":""}>
+Shipped
+</option>
+
+<option value="Delivered"
+${data.status==="Delivered"?"selected":""}>
+Delivered
+</option>
+
+<option value="Cancelled"
+${data.status==="Cancelled"?"selected":""}>
+Cancelled
+</option>
+
+</select>
+
+</td>
+
+<td>
+
+<button onclick="viewOrder('${order.id}')">
+View
+</button>
+
+</td>
+
+</tr>
+`;
+window.changeStatus = async (id,status)=>{
+
+await updateDoc(doc(db,"orders",id),{
+
+status:status
+
+});
+
+}
+
 
 
 
