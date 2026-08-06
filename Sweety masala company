@@ -2130,6 +2130,10 @@ badge.innerHTML=total;
 }
 
 updateCartCount();
+<a href="cart.html">
+🛒 Cart (<span id="cart-count">0</span>)
+</a>
+
 
 
 
