@@ -2199,6 +2199,91 @@ border-radius:5px;
 cursor:pointer;
 
 }
+// ==========================
+// Load Cart Page
+// ==========================
+
+function loadCart(){
+
+const cartItems=document.getElementById("cart-items");
+
+const totalDiv=document.getElementById("cart-total");
+
+if(!cartItems) return;
+
+let cart=getCart();
+
+let grandTotal=0;
+
+cartItems.innerHTML="";
+
+cart.forEach(item=>{
+
+const finalPrice=
+item.price-(item.price*item.discount/100);
+
+const itemTotal=
+finalPrice*item.quantity;
+
+grandTotal+=itemTotal;
+
+cartItems.innerHTML+=`
+
+<div class="cart-item">
+
+<img src="${item.image}">
+
+<div>
+
+<h3>${item.name}</h3>
+
+<p>${item.size}</p>
+
+<p>₹${finalPrice}</p>
+
+<button
+class="qty-btn"
+onclick="decreaseQuantity('${item.id}')">
+
+-
+
+</button>
+
+${item.quantity}
+
+<button
+class="qty-btn"
+onclick="increaseQuantity('${item.id}')">
+
++
+
+</button>
+
+<br><br>
+
+<button
+class="remove-btn"
+onclick="removeFromCart('${item.id}')">
+
+Remove
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+totalDiv.innerHTML=
+"Total : ₹"+grandTotal;
+
+}
+
+loadCart();
+
 
 
 
