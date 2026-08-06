@@ -2133,6 +2133,19 @@ updateCartCount();
 <a href="cart.html">
 🛒 Cart (<span id="cart-count">0</span>)
 </a>
+<button onclick='addToCart({
+id:"${doc.id}",
+name:`${p.name}`,
+price:${p.price},
+discount:${p.discount},
+image:`${p.image}`,
+size:`${p.size}`
+})'>
+
+Add To Cart
+
+</button>
+
 
 
 
