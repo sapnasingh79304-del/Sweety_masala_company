@@ -2727,8 +2727,31 @@ window.updateStatus = async (id) => {
         status: "Confirmed"
     });
 
-}loadOrders();
+}loadOrders();<div id="orderModal" class="modal">
 
+    <div class="modal-content">
+
+        <span id="closeModal">&times;</span>
+
+        <h2>Order Details</h2>
+
+        <div id="orderDetails"></div>
+
+    </div>
+
+</div>
+
+<td>
+
+    <button onclick="viewOrder('${order.id}')">
+        View
+    </button>
+
+    <button onclick="updateStatus('${order.id}')">
+        Confirm
+    </button>
+
+</td>
 
 
 
