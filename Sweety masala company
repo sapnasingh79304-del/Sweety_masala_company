@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ù<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -3094,7 +3094,32 @@ border-radius:6px;
 
 border:1px solid #ccc;
 
+}<footer class="footer">
+    <h3>Sweety Masala Company</h3>
+
+    <p>Quality Spices • Best Price • Fast Delivery</p>
+
+    <p>📍 Jyoti Path, Main Road, Ramkrishna Nagar, Patna - 800027</p>
+
+    <p>📞 +91-XXXXXXXXXX</p>
+
+    <p>&copy; 2026 Sweety Masala Company. All Rights Reserved.</p>
+</footer>.footer{
+    background:#222;
+    color:#fff;
+    text-align:center;
+    padding:30px 20px;
+    margin-top:50px;
 }
+
+.footer h3{
+    margin-bottom:10px;
+}
+
+.footer p{
+    margin:6px 0;
+}
+
 
 
 
