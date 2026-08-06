@@ -2145,6 +2145,7 @@ size:`${p.size}`
 Add To Cart
 
 </button>
+<script src="js/cart.js"></script>
 
 
 
